@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D159C0921DFB32C00CC0029 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D159C0821DFB32C00CC0029 /* NetworkHelper.swift */; };
+		0D159C0B21DFB36E00CC0029 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D159C0A21DFB36E00CC0029 /* AppError.swift */; };
+		0D159C0D21DFB3A500CC0029 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D159C0C21DFB3A500CC0029 /* ImageHelper.swift */; };
+		0D159C1021DFB6AD00CC0029 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D159C0F21DFB6AD00CC0029 /* Element.swift */; };
+		0D159C1421DFC72600CC0029 /* ElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D159C1321DFC72600CC0029 /* ElementCell.swift */; };
+		0D159C1621DFCD0E00CC0029 /* ElementAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D159C1521DFCD0E00CC0029 /* ElementAPIClient.swift */; };
+		0D159C1821DFD08800CC0029 /* FavoriteElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D159C1721DFD08800CC0029 /* FavoriteElement.swift */; };
+		0D159C1A21E001C000CC0029 /* ElementDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D159C1921E001C000CC0029 /* ElementDetailController.swift */; };
 		5734756221DA90C700FB6177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734756121DA90C700FB6177 /* AppDelegate.swift */; };
 		5734756421DA90C700FB6177 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734756321DA90C700FB6177 /* ViewController.swift */; };
 		5734756721DA90C700FB6177 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5734756521DA90C700FB6177 /* Main.storyboard */; };
@@ -15,6 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D159C0821DFB32C00CC0029 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		0D159C0A21DFB36E00CC0029 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		0D159C0C21DFB3A500CC0029 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		0D159C0F21DFB6AD00CC0029 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		0D159C1321DFC72600CC0029 /* ElementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCell.swift; sourceTree = "<group>"; };
+		0D159C1521DFCD0E00CC0029 /* ElementAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementAPIClient.swift; sourceTree = "<group>"; };
+		0D159C1721DFD08800CC0029 /* FavoriteElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteElement.swift; sourceTree = "<group>"; };
+		0D159C1921E001C000CC0029 /* ElementDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailController.swift; sourceTree = "<group>"; };
 		5734755E21DA90C700FB6177 /* Elements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5734756121DA90C700FB6177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5734756321DA90C700FB6177 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +51,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D159C0721DFB30000CC0029 /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				0D159C0821DFB32C00CC0029 /* NetworkHelper.swift */,
+				0D159C0A21DFB36E00CC0029 /* AppError.swift */,
+				0D159C0C21DFB3A500CC0029 /* ImageHelper.swift */,
+				0D159C1521DFCD0E00CC0029 /* ElementAPIClient.swift */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		0D159C0E21DFB69600CC0029 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D159C0F21DFB6AD00CC0029 /* Element.swift */,
+				0D159C1721DFD08800CC0029 /* FavoriteElement.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5734755521DA90C700FB6177 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +90,12 @@
 		5734756021DA90C700FB6177 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				0D159C1321DFC72600CC0029 /* ElementCell.swift */,
+				0D159C0E21DFB69600CC0029 /* Models */,
+				0D159C0721DFB30000CC0029 /* Network Services */,
 				5734756321DA90C700FB6177 /* ViewController.swift */,
 				5734756521DA90C700FB6177 /* Main.storyboard */,
+				0D159C1921E001C000CC0029 /* ElementDetailController.swift */,
 				5734757321DA90F500FB6177 /* Supporting Files */,
 				5734756D21DA90C800FB6177 /* Info.plist */,
 			);
@@ -143,8 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D159C1421DFC72600CC0029 /* ElementCell.swift in Sources */,
+				0D159C0B21DFB36E00CC0029 /* AppError.swift in Sources */,
+				0D159C0D21DFB3A500CC0029 /* ImageHelper.swift in Sources */,
+				0D159C1021DFB6AD00CC0029 /* Element.swift in Sources */,
+				0D159C1621DFCD0E00CC0029 /* ElementAPIClient.swift in Sources */,
 				5734756421DA90C700FB6177 /* ViewController.swift in Sources */,
+				0D159C0921DFB32C00CC0029 /* NetworkHelper.swift in Sources */,
+				0D159C1A21E001C000CC0029 /* ElementDetailController.swift in Sources */,
 				5734756221DA90C700FB6177 /* AppDelegate.swift in Sources */,
+				0D159C1821DFD08800CC0029 /* FavoriteElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D9PD329X4J;
 				INFOPLIST_FILE = Elements/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,7 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D9PD329X4J;
 				INFOPLIST_FILE = Elements/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

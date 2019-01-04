@@ -18,6 +18,7 @@ class ElementDetailController: UIViewController {
     @IBOutlet weak var elementDiscoveredBy: UILabel!
     @IBOutlet weak var elementImage: UIImageView!
     
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     
     override func viewDidLoad() {
@@ -29,21 +30,51 @@ class ElementDetailController: UIViewController {
         elementMeltPoint.text = "\(String(describing: element.boil))"
         elementBoilPoint.text = "\(String(describing: element.melt))"
         elementDiscoveredBy?.text = element.discoveredBy
-        //        elementImage
-        //
-        
+        ImageHelper.shared.fetchImage(urlString: "http://images-of-elements.com/lowercasedElementName.jpg") { (appError, image) in
+            if let appError = appError {
+                print(appError.errorMessage())
+            } else if let image = image {
+                self.elementImage.image = image
+            }
+        }
         
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    private func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { alert in }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func addToFavorites(_ sender: UIBarButtonItem) {
+        // required parameters for favoriting
+        // trackId, favoritedBy, collectionName, artworkUrl600
+        let favorite = Favorite.init(elementSymbol: element.symbol, elementName: element.name)
+        
+        // encode the favorite object as Data to send to the API
+        // using JSONEncoder()
+        do {
+            let data = try JSONEncoder().encode(favorite)
+            ElementAPIClient.favoriteElement(data: data) { (appError, success) in
+                if let appError = appError {
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "Error Message", message: appError.errorMessage())
+                    }
+                } else if success {
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "successfully favorited element", message: "")
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "was not favorited", message: "")
+                    }
+                }
+            }
+        } catch {
+            print("encoding error: \(error)")
+        }
+    }
     
 }

@@ -9,8 +9,9 @@
 import Foundation
 
 struct Favorite: Codable {
-    let trackId: Int
-    let favoritedBy: String
-    let collectionName: String
+    
+    let favoritedBy = "Jeffrey Almonte"
+    let elementSymbol: String
+    let elementName: String
     //let artworkUrl600: URL
 }

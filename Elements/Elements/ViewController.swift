@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     func loadData() {
-        ElementAPIClient.searchElement { (appError, elements) in
+        ElementAPIClient.getElement { (appError, elements) in
             if let appError = appError {
                 print(appError.errorMessage())
             } else if let elements = elements {

@@ -13,5 +13,5 @@ struct Favorite: Codable {
     let favoritedBy = "Jeffrey Almonte"
     let elementSymbol: String
     let elementName: String
-    //let artworkUrl600: URL
+    
 }

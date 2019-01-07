@@ -31,7 +31,7 @@ final class ElementAPIClient {
         }
     }
     
-    // uploading json data to the network api
+  
     static func favoriteElement(data: Data, completionHandler: @escaping (AppError?, Bool) -> Void) {
         NetworkHelper.shared.performUploadTask(endpointURLString: "https://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/favorites", httpMethod: "POST", httpBody: data) { (appError, data, httpResponse) in
             if let appError = appError {
@@ -43,7 +43,7 @@ final class ElementAPIClient {
                     completionHandler(AppError.badStatusCode(String(statusCode)), false)
                     return
             }
-            // TODO: create a favorite and confirm favoriteId
+            
             if let _ = data {
                 completionHandler(nil, true)
             }

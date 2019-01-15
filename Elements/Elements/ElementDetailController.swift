@@ -30,7 +30,7 @@ class ElementDetailController: UIViewController {
         elementMeltPoint.text = "\(String(describing: element.boil))"
         elementBoilPoint.text = "\(String(describing: element.melt))"
         elementDiscoveredBy?.text = element.discoveredBy
-        ImageHelper.shared.fetchImage(urlString: "http://images-of-elements.com/lowercasedElementName.jpg") { (appError, image) in
+        ImageHelper.shared.fetchImage(urlString: "http://images-of-elements.com/\(element.name.lowercased()).jpg") { (appError, image) in
             if let appError = appError {
                 print(appError.errorMessage())
             } else if let image = image {
